@@ -34,6 +34,14 @@ namespace NutriAdvice.Modules
             }
         }
 
+        public double UserBMI
+        {
+            set
+            {
+                DisplayBmi.Text = String.Format("{0:0.00}", value.ToString());
+            }
+        }
+
         public DisplayUserStatusModule()
         {
             InitializeComponent();
