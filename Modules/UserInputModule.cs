@@ -7,9 +7,9 @@ using System.Text;
 using System.Windows.Forms;
 
 namespace NutriAdvice.Modules
-{
-    public partial class UserInputModule : UserControl
+{    public partial class UserInputModule : UserControl
     {
+        public delegate void PassInformation();
         public int? UserAge
         {
             get
