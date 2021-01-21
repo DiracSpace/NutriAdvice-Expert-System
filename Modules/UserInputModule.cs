@@ -92,6 +92,7 @@ namespace NutriAdvice.Modules
         public Func<double, double> ReturnUserBMI { get; set; }
         public Func<string, string> ReturnBMIStatus { get; set; }
         public Func<double, double> ReturnUserBMR { get; set; }
+        public Func<double, double> ReturnUserDailyIntake { get; set; }
 
         static double BMI(double weight, int height)
         {
@@ -129,6 +130,20 @@ namespace NutriAdvice.Modules
             }
         }
 
+        static double DailyCalories(string activity, double bmr)
+        {
+            if (activity == "Sedentario")
+                return (bmr * 1.2);
+            else if (activity == "Ligero")
+                return (bmr * 1.375);
+            else if (activity == "Moderado")
+                return (bmr * 1.55);
+            else if (activity == "Alto")
+                return (bmr * 1.725);
+            else
+                return (bmr * 1.9);
+        }
+
         public UserInputModule()
         {
             InitializeComponent();
@@ -144,6 +159,7 @@ namespace NutriAdvice.Modules
                 var LocalBMI = BMI(LocalWeight, LocalHeight);
                 var LocalBMIStatus = BMIStatus(LocalBMI);
                 var LocalBMR = BMR(LocalWeight, LocalHeight, LocalAge, LocalSex);
+                var LocalDailyIntake = DailyCalories(LocalActivity, LocalBMR);
 
                 ReturnUserAge(LocalAge);
                 ReturnUserSex(LocalSex);
@@ -152,6 +168,7 @@ namespace NutriAdvice.Modules
                 ReturnUserBMI(LocalBMI);
                 ReturnBMIStatus(LocalBMIStatus);
                 ReturnUserBMR(LocalBMR);
+                ReturnUserDailyIntake(LocalDailyIntake);
             };
         }
     }

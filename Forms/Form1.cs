@@ -64,6 +64,12 @@ namespace NutriAdvice
                 DisplayUserStatusModule.UserBMR = bmr;
                 return bmr;
             };
+
+            UserInputModule.ReturnUserDailyIntake += (dailyintake) =>
+            {
+                DisplayUserStatusModule.UserDailyIntake = dailyintake;
+                return dailyintake;
+            };
         }
     }
 }

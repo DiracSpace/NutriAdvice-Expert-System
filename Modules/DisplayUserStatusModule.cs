@@ -66,6 +66,14 @@ namespace NutriAdvice.Modules
             }
         }
 
+        public double UserDailyIntake
+        {
+            set
+            {
+                DisplayDailyIntake.Text = value.ToString();
+            }
+        }
+
         public DisplayUserStatusModule()
         {
             InitializeComponent();

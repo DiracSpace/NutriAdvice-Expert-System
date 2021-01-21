@@ -46,11 +46,15 @@ namespace NutriAdvice.Modules
             this.label2 = new System.Windows.Forms.Label();
             this.DisplayAge = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.DisplayDailyIntake = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.DisplayDailyIntake);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.DisplayBmr);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.DisplaySex);
@@ -216,6 +220,24 @@ namespace NutriAdvice.Modules
             this.label1.TabIndex = 0;
             this.label1.Text = "Edad:";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(91, 29);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(89, 15);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Calorias diarias:";
+            // 
+            // DisplayDailyIntake
+            // 
+            this.DisplayDailyIntake.AutoSize = true;
+            this.DisplayDailyIntake.Location = new System.Drawing.Point(186, 29);
+            this.DisplayDailyIntake.Name = "DisplayDailyIntake";
+            this.DisplayDailyIntake.Size = new System.Drawing.Size(13, 15);
+            this.DisplayDailyIntake.TabIndex = 17;
+            this.DisplayDailyIntake.Text = "1";
+            // 
             // DisplayUserStatusModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -248,5 +270,7 @@ namespace NutriAdvice.Modules
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label DisplaySex;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label DisplayDailyIntake;
+        private System.Windows.Forms.Label label7;
     }
 }
