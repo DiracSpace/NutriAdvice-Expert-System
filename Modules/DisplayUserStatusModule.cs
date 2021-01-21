@@ -10,6 +10,30 @@ namespace NutriAdvice.Modules
 {
     public partial class DisplayUserStatusModule : UserControl
     {
+        public int UserAge
+        {
+            set
+            {
+                DisplayAge.Text = value.ToString();
+            }
+        }
+
+        public double UserWeight
+        {
+            set
+            {
+                DisplayWeight.Text = value.ToString();
+            }
+        }
+
+        public int UserHeight
+        {
+            set
+            {
+                DisplayHeight.Text = value.ToString();
+            }
+        }
+
         public DisplayUserStatusModule()
         {
             InitializeComponent();

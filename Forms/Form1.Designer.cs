@@ -29,25 +29,34 @@ namespace NutriAdvice
         /// </summary>
         private void InitializeComponent()
         {
-            this.userInputModule1 = new NutriAdvice.Modules.UserInputModule();
+            this.GetData = new NutriAdvice.Modules.UserInputModule();
+            this.DisplayData = new NutriAdvice.Modules.DisplayUserStatusModule();
             this.SuspendLayout();
             // 
-            // userInputModule1
+            // GetData
             // 
-            this.userInputModule1.Location = new System.Drawing.Point(12, 12);
-            this.userInputModule1.Name = "userInputModule1";
-            this.userInputModule1.ReturnUserAge = null;
-            this.userInputModule1.ReturnUserHeight = null;
-            this.userInputModule1.ReturnUserWeight = null;
-            this.userInputModule1.Size = new System.Drawing.Size(367, 129);
-            this.userInputModule1.TabIndex = 0;
+            this.GetData.Location = new System.Drawing.Point(12, 12);
+            this.GetData.Name = "GetData";
+            this.GetData.ReturnUserAge = null;
+            this.GetData.ReturnUserHeight = null;
+            this.GetData.ReturnUserWeight = null;
+            this.GetData.Size = new System.Drawing.Size(367, 129);
+            this.GetData.TabIndex = 0;
+            // 
+            // DisplayData
+            // 
+            this.DisplayData.Location = new System.Drawing.Point(385, 12);
+            this.DisplayData.Name = "DisplayData";
+            this.DisplayData.Size = new System.Drawing.Size(271, 269);
+            this.DisplayData.TabIndex = 1;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.userInputModule1);
+            this.ClientSize = new System.Drawing.Size(658, 281);
+            this.Controls.Add(this.DisplayData);
+            this.Controls.Add(this.GetData);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -56,7 +65,8 @@ namespace NutriAdvice
 
         #endregion
 
-        private Modules.UserInputModule userInputModule1;
+        private Modules.UserInputModule GetData;
+        private Modules.DisplayUserStatusModule DisplayData;
     }
 }
 
