@@ -29,13 +29,34 @@ namespace NutriAdvice
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.userInputModule1 = new NutriAdvice.Modules.UserInputModule();
+            this.SuspendLayout();
+            // 
+            // userInputModule1
+            // 
+            this.userInputModule1.Location = new System.Drawing.Point(12, 12);
+            this.userInputModule1.Name = "userInputModule1";
+            this.userInputModule1.ReturnUserAge = null;
+            this.userInputModule1.ReturnUserHeight = null;
+            this.userInputModule1.ReturnUserWeight = null;
+            this.userInputModule1.Size = new System.Drawing.Size(367, 129);
+            this.userInputModule1.TabIndex = 0;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.userInputModule1);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private Modules.UserInputModule userInputModule1;
     }
 }
 

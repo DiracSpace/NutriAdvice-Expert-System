@@ -68,6 +68,8 @@ namespace NutriAdvice.Modules
                 var LocalWeight = UserWeight ?? 0;
                 var LocalHeight = UserHeight ?? 0;
 
+                MessageBox.Show(LocalAge + ", " + LocalHeight + ", " + LocalWeight);
+
                 ReturnUserAge(LocalAge);
                 ReturnUserWeight(LocalWeight);
                 ReturnUserHeight(LocalHeight);

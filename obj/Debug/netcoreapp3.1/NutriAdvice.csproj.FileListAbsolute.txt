@@ -24,3 +24,7 @@ C:\Users\Roberto de León\Documents\git\NutriAdvice-Expert-System\obj\Debug\netc
 C:\Users\Roberto de León\Documents\git\NutriAdvice-Expert-System\obj\Debug\netcoreapp3.1\NutriAdvice.dll
 C:\Users\Roberto de León\Documents\git\NutriAdvice-Expert-System\obj\Debug\netcoreapp3.1\NutriAdvice.pdb
 C:\Users\Roberto de León\Documents\git\NutriAdvice-Expert-System\obj\Debug\netcoreapp3.1\NutriAdvice.genruntimeconfig.cache
+C:\Users\Roberto de León\Documents\git\NutriAdvice-Expert-System\obj\Debug\netcoreapp3.1\NutriAdvice.Form1.resources
+C:\Users\Roberto de León\Documents\git\NutriAdvice-Expert-System\obj\Debug\netcoreapp3.1\NutriAdvice.Modules.DisplayUserStatusModule.resources
+C:\Users\Roberto de León\Documents\git\NutriAdvice-Expert-System\obj\Debug\netcoreapp3.1\NutriAdvice.Modules.UserInputModule.resources
+C:\Users\Roberto de León\Documents\git\NutriAdvice-Expert-System\obj\Debug\netcoreapp3.1\NutriAdvice.csproj.GenerateResource.cache
