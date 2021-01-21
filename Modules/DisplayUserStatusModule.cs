@@ -18,6 +18,14 @@ namespace NutriAdvice.Modules
             }
         }
 
+        public string UserSex
+        {
+            set
+            {
+                DisplaySex.Text = value.ToString();
+            }
+        }
+
         public double UserWeight
         {
             set
@@ -47,6 +55,14 @@ namespace NutriAdvice.Modules
             set
             {
                 DisplayBMIStatus.Text = value.ToString();
+            }
+        }
+
+        public double UserBMR
+        {
+            set
+            {
+                DisplayBmr.Text = value.ToString();
             }
         }
 

@@ -55,11 +55,43 @@ namespace NutriAdvice.Modules
             }
         }
 
+        public string UserSex
+        {
+            get
+            {
+                try
+                {
+                    return SelectSexCmbbx.Items[SelectSexCmbbx.SelectedIndex].ToString();
+                }
+                catch
+                {
+                    return "";
+                }
+            }
+        }
+
+        public string UserActiviy
+        {
+            get
+            {
+                try
+                {
+                    return SelectActivityCmbbx.Items[SelectActivityCmbbx.SelectedIndex].ToString();
+                }
+                catch
+                {
+                    return "";
+                }
+            }
+        }
+
         public Func<int, int> ReturnUserAge { get; set; }
+        public Func<string, string> ReturnUserSex { get; set; }
         public Func<double, double> ReturnUserWeight { get; set; }
         public Func<int, int> ReturnUserHeight { get; set; }
         public Func<double, double> ReturnUserBMI { get; set; }
         public Func<string, string> ReturnBMIStatus { get; set; }
+        public Func<double, double> ReturnUserBMR { get; set; }
 
         static double BMI(double weight, int height)
         {
@@ -82,6 +114,21 @@ namespace NutriAdvice.Modules
                 return "Tienes obesidad III"; // obesidas grado 3
         }
 
+        /*
+            Harris-Benedict Equation imperial formula
+         */
+        static double BMR(double weight, double height, int age, string sex)
+        {
+            if (sex == "M")
+            {
+                return ((10 * weight) + (6.25 * height) - (5 * age) + 5);
+            }
+            else
+            {
+                return ((10 * weight) + (6.25 * height) - (5 * age) -  161);
+            }
+        }
+
         public UserInputModule()
         {
             InitializeComponent();
@@ -91,14 +138,20 @@ namespace NutriAdvice.Modules
                 var LocalAge = UserAge ?? 0;
                 var LocalWeight = UserWeight ?? 0;
                 var LocalHeight = UserHeight ?? 0;
+                var LocalSex = UserSex ?? "";
+                var LocalActivity = UserActiviy ?? "";
+
                 var LocalBMI = BMI(LocalWeight, LocalHeight);
                 var LocalBMIStatus = BMIStatus(LocalBMI);
+                var LocalBMR = BMR(LocalWeight, LocalHeight, LocalAge, LocalSex);
 
                 ReturnUserAge(LocalAge);
+                ReturnUserSex(LocalSex);
                 ReturnUserWeight(LocalWeight);
                 ReturnUserHeight(LocalHeight);
                 ReturnUserBMI(LocalBMI);
                 ReturnBMIStatus(LocalBMIStatus);
+                ReturnUserBMR(LocalBMR);
             };
         }
     }
