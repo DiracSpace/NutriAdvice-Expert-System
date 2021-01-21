@@ -29,6 +29,12 @@ namespace NutriAdvice
                 return age;
             };
 
+            UserInputModule.ReturnUserSex += (sex) =>
+            {
+                DisplayUserStatusModule.UserSex = sex;
+                return sex;
+            };
+
             UserInputModule.ReturnUserWeight += (weight) => 
             {
                 DisplayUserStatusModule.UserWeight = weight;
@@ -45,6 +51,24 @@ namespace NutriAdvice
             {
                 DisplayUserStatusModule.UserBMI = bmi;
                 return bmi;
+            };
+
+            UserInputModule.ReturnBMIStatus += (bmistatus) => 
+            {
+                DisplayUserStatusModule.UserBMIStatus = bmistatus;
+                return bmistatus;
+            };
+
+            UserInputModule.ReturnUserBMR += (bmr) =>
+            {
+                DisplayUserStatusModule.UserBMR = bmr;
+                return bmr;
+            };
+
+            UserInputModule.ReturnUserDailyIntake += (dailyintake) =>
+            {
+                DisplayUserStatusModule.UserDailyIntake = dailyintake;
+                return dailyintake;
             };
         }
     }
