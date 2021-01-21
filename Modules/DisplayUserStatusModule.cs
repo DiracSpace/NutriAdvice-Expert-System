@@ -14,7 +14,7 @@ namespace NutriAdvice.Modules
         {
             set
             {
-                DisplayAge.Text = value.ToString();
+                DisplayAge2.Text = value.ToString();
             }
         }
 
@@ -22,7 +22,7 @@ namespace NutriAdvice.Modules
         {
             set
             {
-                DisplayWeight.Text = value.ToString();
+                DisplayWeight2.Text = value.ToString();
             }
         }
 
@@ -38,7 +38,15 @@ namespace NutriAdvice.Modules
         {
             set
             {
-                DisplayBmi.Text = String.Format("{0:0.00}", value.ToString());
+                DisplayBmi.Text = Math.Round(value, 2).ToString("N2");
+            }
+        }
+
+        public string UserBMIStatus
+        {
+            set
+            {
+                DisplayBMIStatus.Text = value.ToString();
             }
         }
 

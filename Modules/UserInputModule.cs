@@ -57,28 +57,29 @@ namespace NutriAdvice.Modules
 
         public Func<int, int> ReturnUserAge { get; set; }
         public Func<double, double> ReturnUserWeight { get; set; }
-        public Func<double, double> ReturnUserBMI { get; set; }
         public Func<int, int> ReturnUserHeight { get; set; }
+        public Func<double, double> ReturnUserBMI { get; set; }
+        public Func<string, string> ReturnBMIStatus { get; set; }
 
         static double BMI(double weight, int height)
         {
             return weight / Math.Pow((height * 0.01), 2);
         }
 
-        static int WeightLevel(double imc)
+        static string BMIStatus(double imc)
         {
             if (imc < 18.50)
-                return 1;
+                return "Estás debajo de tu IMC ideal";
             else if (imc > 18.50 && imc < 24.90)
-                return 2;
+                return "Estás en un IMC ideal";
             else if (imc > 25.00 && imc < 29.90)
-                return 3; // sobrepeso
+                return "Tienes sobrepeso"; // sobrepeso
             else if (imc > 30.00 && imc < 34.90)
-                return 4; // obesidad grado 1
+                return "Tienes obesidad I"; // obesidad grado 1
             else if (imc > 35.00 && imc < 40.00)
-                return 5; // obesidad grado 2
+                return "Tienes obesidad II"; // obesidad grado 2
             else
-                return 6; // obesidas grado 3
+                return "Tienes obesidad III"; // obesidas grado 3
         }
 
         public UserInputModule()
@@ -91,11 +92,13 @@ namespace NutriAdvice.Modules
                 var LocalWeight = UserWeight ?? 0;
                 var LocalHeight = UserHeight ?? 0;
                 var LocalBMI = BMI(LocalWeight, LocalHeight);
+                var LocalBMIStatus = BMIStatus(LocalBMI);
 
                 ReturnUserAge(LocalAge);
                 ReturnUserWeight(LocalWeight);
                 ReturnUserHeight(LocalHeight);
                 ReturnUserBMI(LocalBMI);
+                ReturnBMIStatus(LocalBMIStatus);
             };
         }
     }

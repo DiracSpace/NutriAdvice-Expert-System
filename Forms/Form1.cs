@@ -46,6 +46,12 @@ namespace NutriAdvice
                 DisplayUserStatusModule.UserBMI = bmi;
                 return bmi;
             };
+
+            UserInputModule.ReturnBMIStatus += (bmistatus) => 
+            {
+                DisplayUserStatusModule.UserBMIStatus = bmistatus;
+                return bmistatus;
+            };
         }
     }
 }
