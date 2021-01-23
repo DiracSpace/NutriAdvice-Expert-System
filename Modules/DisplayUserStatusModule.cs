@@ -70,7 +70,7 @@ namespace NutriAdvice.Modules
         {
             set
             {
-                DisplayDailyIntake.Text = value.ToString();
+                DisplayDailyIntake.Text = Math.Round(value, 2).ToString("N2");
             }
         }
 
