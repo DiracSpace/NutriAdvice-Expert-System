@@ -30,6 +30,14 @@ namespace NutriAdvice.Modules
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.DisplayRecipeType = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.DisplayUserAction = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.DisplayDietIntake = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.DisplayDailyIntake = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.DisplayBmr = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.DisplaySex = new System.Windows.Forms.Label();
@@ -46,13 +54,17 @@ namespace NutriAdvice.Modules
             this.label2 = new System.Windows.Forms.Label();
             this.DisplayAge = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.DisplayDailyIntake = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.DisplayRecipeType);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.DisplayUserAction);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.DisplayDietIntake);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.DisplayDailyIntake);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.DisplayBmr);
@@ -73,10 +85,82 @@ namespace NutriAdvice.Modules
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(9, 9);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(244, 243);
+            this.groupBox1.Size = new System.Drawing.Size(289, 243);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información de Usuario:";
+            // 
+            // DisplayRecipeType
+            // 
+            this.DisplayRecipeType.AutoSize = true;
+            this.DisplayRecipeType.Location = new System.Drawing.Point(225, 103);
+            this.DisplayRecipeType.Name = "DisplayRecipeType";
+            this.DisplayRecipeType.Size = new System.Drawing.Size(13, 15);
+            this.DisplayRecipeType.TabIndex = 23;
+            this.DisplayRecipeType.Text = "1";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(130, 103);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(33, 15);
+            this.label11.TabIndex = 22;
+            this.label11.Text = "Tipo:";
+            // 
+            // DisplayUserAction
+            // 
+            this.DisplayUserAction.AutoSize = true;
+            this.DisplayUserAction.Location = new System.Drawing.Point(225, 79);
+            this.DisplayUserAction.Name = "DisplayUserAction";
+            this.DisplayUserAction.Size = new System.Drawing.Size(13, 15);
+            this.DisplayUserAction.TabIndex = 21;
+            this.DisplayUserAction.Text = "1";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(130, 79);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(47, 15);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "Acción:";
+            // 
+            // DisplayDietIntake
+            // 
+            this.DisplayDietIntake.AutoSize = true;
+            this.DisplayDietIntake.Location = new System.Drawing.Point(225, 55);
+            this.DisplayDietIntake.Name = "DisplayDietIntake";
+            this.DisplayDietIntake.Size = new System.Drawing.Size(13, 15);
+            this.DisplayDietIntake.TabIndex = 19;
+            this.DisplayDietIntake.Text = "1";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(130, 55);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(81, 15);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "Calories dieta:";
+            // 
+            // DisplayDailyIntake
+            // 
+            this.DisplayDailyIntake.AutoSize = true;
+            this.DisplayDailyIntake.Location = new System.Drawing.Point(225, 29);
+            this.DisplayDailyIntake.Name = "DisplayDailyIntake";
+            this.DisplayDailyIntake.Size = new System.Drawing.Size(13, 15);
+            this.DisplayDailyIntake.TabIndex = 17;
+            this.DisplayDailyIntake.Text = "1";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(130, 29);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(89, 15);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Calorias diarias:";
             // 
             // DisplayBmr
             // 
@@ -220,31 +304,13 @@ namespace NutriAdvice.Modules
             this.label1.TabIndex = 0;
             this.label1.Text = "Edad:";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(91, 29);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(89, 15);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "Calorias diarias:";
-            // 
-            // DisplayDailyIntake
-            // 
-            this.DisplayDailyIntake.AutoSize = true;
-            this.DisplayDailyIntake.Location = new System.Drawing.Point(186, 29);
-            this.DisplayDailyIntake.Name = "DisplayDailyIntake";
-            this.DisplayDailyIntake.Size = new System.Drawing.Size(13, 15);
-            this.DisplayDailyIntake.TabIndex = 17;
-            this.DisplayDailyIntake.Text = "1";
-            // 
             // DisplayUserStatusModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
             this.Name = "DisplayUserStatusModule";
-            this.Size = new System.Drawing.Size(261, 264);
+            this.Size = new System.Drawing.Size(312, 264);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -272,5 +338,11 @@ namespace NutriAdvice.Modules
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label DisplayDailyIntake;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label DisplayDietIntake;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label DisplayUserAction;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label DisplayRecipeType;
+        private System.Windows.Forms.Label label11;
     }
 }

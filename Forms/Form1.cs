@@ -70,6 +70,24 @@ namespace NutriAdvice
                 DisplayUserStatusModule.UserDailyIntake = dailyintake;
                 return dailyintake;
             };
+
+            UserInputModule.ReturnUserDietCalories += (dietintake) =>
+            {
+                DisplayUserStatusModule.UserDietIntake = dietintake;
+                return dietintake;
+            };
+
+            UserInputModule.ReturnUserDietAction += (action) =>
+            {
+                DisplayUserStatusModule.UserDietAction = action;
+                return action;
+            };
+
+            UserInputModule.ReturnUserFoodType += (type) =>
+            {
+                DisplayUserStatusModule.UserFoodType = type;
+                return type;
+            };
         }
     }
 }

@@ -74,6 +74,30 @@ namespace NutriAdvice.Modules
             }
         }
 
+        public double UserDietIntake
+        {
+            set
+            {
+                DisplayDietIntake.Text = Math.Round(value, 2).ToString("N2");
+            }
+        }
+
+        public string UserDietAction
+        {
+            set
+            {
+                DisplayUserAction.Text = value.ToString();
+            }
+        }
+
+        public string UserFoodType
+        {
+            set
+            {
+                DisplayRecipeType.Text = value.ToString();
+            }
+        }
+
         public DisplayUserStatusModule()
         {
             InitializeComponent();

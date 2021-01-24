@@ -2,12 +2,16 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
   <ItemGroup>
     <Folder Include="Evidence\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CSProlog" Version="6.0.0" />
   </ItemGroup>
 
 </Project>
