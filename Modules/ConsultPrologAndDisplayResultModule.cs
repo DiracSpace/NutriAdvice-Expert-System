@@ -36,7 +36,16 @@ namespace NutriAdvice.Modules
 
         public void ConsultProlog()
         {
-            MessageBox.Show(userDietAction + ", " + userDietIntake.ToString() + ", " + userFoodType);
+            var prolog = new PrologEngine(persistentCommandHistory: false);
+
+            string filename = @"C:\Users\Roberto de León\Documents\git\NutriAdvice-Expert-System\Prolog\Recipes_List.pl";
+
+            string query = @"contiene('Almuerzo','Bajar',R,CS,L,I,C,M).";
+            string test = @"contiene(" + userFoodType.ToString() + ", "+ userDietAction.ToString() + ", R, CS, L, I, C, M).";
+
+            var solution = prolog.GetAllSolutions(filename, test);
+
+            MessageBox.Show(solution.ToString());
         }
 
         public ConsultPrologAndDisplayResultModule()
