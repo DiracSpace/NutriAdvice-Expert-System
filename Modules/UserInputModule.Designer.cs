@@ -30,6 +30,10 @@ namespace NutriAdvice.Modules
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.SelectActionCmbbx = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.SelectTypeCmbbx = new System.Windows.Forms.ComboBox();
             this.SelectActivityCmbbx = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,6 +50,10 @@ namespace NutriAdvice.Modules
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.SelectActionCmbbx);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.SelectTypeCmbbx);
             this.groupBox1.Controls.Add(this.SelectActivityCmbbx);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -59,13 +67,59 @@ namespace NutriAdvice.Modules
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(9, 10);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(352, 118);
+            this.groupBox1.Size = new System.Drawing.Size(352, 190);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos:";
             // 
+            // SelectActionCmbbx
+            // 
+            this.SelectActionCmbbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SelectActionCmbbx.FormattingEnabled = true;
+            this.SelectActionCmbbx.Items.AddRange(new object[] {
+            "Subir",
+            "Mantener",
+            "Bajar"});
+            this.SelectActionCmbbx.Location = new System.Drawing.Point(6, 140);
+            this.SelectActionCmbbx.Name = "SelectActionCmbbx";
+            this.SelectActionCmbbx.Size = new System.Drawing.Size(100, 23);
+            this.SelectActionCmbbx.TabIndex = 14;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 122);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(72, 15);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "¿Qué desea?";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(241, 68);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(92, 15);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Tipo de comida:";
+            // 
+            // SelectTypeCmbbx
+            // 
+            this.SelectTypeCmbbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SelectTypeCmbbx.FormattingEnabled = true;
+            this.SelectTypeCmbbx.Items.AddRange(new object[] {
+            "Desayuno",
+            "Almuerzo",
+            "Cena",
+            "Ensalada"});
+            this.SelectTypeCmbbx.Location = new System.Drawing.Point(241, 86);
+            this.SelectTypeCmbbx.Name = "SelectTypeCmbbx";
+            this.SelectTypeCmbbx.Size = new System.Drawing.Size(100, 23);
+            this.SelectTypeCmbbx.TabIndex = 11;
+            // 
             // SelectActivityCmbbx
             // 
+            this.SelectActivityCmbbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SelectActivityCmbbx.FormattingEnabled = true;
             this.SelectActivityCmbbx.Items.AddRange(new object[] {
             "Sedentario",
@@ -98,6 +152,7 @@ namespace NutriAdvice.Modules
             // 
             // SelectSexCmbbx
             // 
+            this.SelectSexCmbbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SelectSexCmbbx.FormattingEnabled = true;
             this.SelectSexCmbbx.Items.AddRange(new object[] {
             "M",
@@ -109,12 +164,13 @@ namespace NutriAdvice.Modules
             // 
             // Calculatebtn
             // 
-            this.Calculatebtn.Location = new System.Drawing.Point(266, 86);
+            this.Calculatebtn.Location = new System.Drawing.Point(266, 161);
             this.Calculatebtn.Name = "Calculatebtn";
             this.Calculatebtn.Size = new System.Drawing.Size(75, 23);
             this.Calculatebtn.TabIndex = 6;
             this.Calculatebtn.Text = "Iniciar";
             this.Calculatebtn.UseVisualStyleBackColor = true;
+            this.Calculatebtn.Click += new System.EventHandler(this.Calculatebtn_Click);
             // 
             // Heighttxtbx
             // 
@@ -170,7 +226,7 @@ namespace NutriAdvice.Modules
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
             this.Name = "UserInputModule";
-            this.Size = new System.Drawing.Size(369, 136);
+            this.Size = new System.Drawing.Size(370, 209);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -191,5 +247,9 @@ namespace NutriAdvice.Modules
         private System.Windows.Forms.ComboBox SelectSexCmbbx;
         private System.Windows.Forms.ComboBox SelectActivityCmbbx;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox SelectTypeCmbbx;
+        private System.Windows.Forms.ComboBox SelectActionCmbbx;
+        private System.Windows.Forms.Label label7;
     }
 }

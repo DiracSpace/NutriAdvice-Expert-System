@@ -9,7 +9,7 @@ using System.Windows.Forms;
 namespace NutriAdvice.Modules
 {    public partial class UserInputModule : UserControl
     {
-        public delegate void PassInformation();
+        public EventHandler CalculatebtnEvent;
         public int? UserAge
         {
             get
@@ -85,6 +85,36 @@ namespace NutriAdvice.Modules
             }
         }
 
+        public string UserFoodType
+        {
+            get
+            {
+                try
+                {
+                    return SelectTypeCmbbx.Items[SelectTypeCmbbx.SelectedIndex].ToString();
+                }
+                catch
+                {
+                    return "";
+                }
+            }
+        }
+
+        public string UserDietAction
+        {
+            get
+            {
+                try
+                {
+                    return SelectActionCmbbx.Items[SelectActionCmbbx.SelectedIndex].ToString();
+                }
+                catch
+                {
+                    return "";
+                }
+            }
+        }
+
         public Func<int, int> ReturnUserAge { get; set; }
         public Func<string, string> ReturnUserSex { get; set; }
         public Func<double, double> ReturnUserWeight { get; set; }
@@ -93,6 +123,9 @@ namespace NutriAdvice.Modules
         public Func<string, string> ReturnBMIStatus { get; set; }
         public Func<double, double> ReturnUserBMR { get; set; }
         public Func<double, double> ReturnUserDailyIntake { get; set; }
+        public Func<string, string> ReturnUserFoodType { get; set; }
+        public Func<string, string> ReturnUserDietAction { get; set; }
+        public Func<double, double> ReturnUserDietCalories { get; set; }
 
         static double BMI(double weight, int height)
         {
@@ -144,32 +177,51 @@ namespace NutriAdvice.Modules
                 return (bmr * 1.9);
         }
 
+        static double DietCalories(string bmistatus, double dailyintake)
+        {
+            double overweightdiet = (dailyintake - 500);
+            if (bmistatus.Contains("Estás debajo de tu IMC ideal"))
+                return (dailyintake + 500);
+            else if (bmistatus.Contains("Estás en un IMC ideal"))
+                return dailyintake;
+            else
+                if (overweightdiet < 1200) return 1300; else return overweightdiet;
+        }
+
         public UserInputModule()
         {
             InitializeComponent();
+        }
 
-            Calculatebtn.Click += (sender, ev) =>
-            {
-                var LocalAge = UserAge ?? 0;
-                var LocalWeight = UserWeight ?? 0;
-                var LocalHeight = UserHeight ?? 0;
-                var LocalSex = UserSex ?? "";
-                var LocalActivity = UserActiviy ?? "";
+        private void Calculatebtn_Click(object sender, EventArgs e)
+        {
+            var LocalAge = UserAge ?? 0;
+            var LocalWeight = UserWeight ?? 0;
+            var LocalHeight = UserHeight ?? 0;
+            var LocalSex = UserSex ?? "";
+            var LocalActivity = UserActiviy ?? "";
+            var LocalFoodType = UserFoodType ?? "";
+            var LocalDietAction = UserDietAction ?? "";
 
-                var LocalBMI = BMI(LocalWeight, LocalHeight);
-                var LocalBMIStatus = BMIStatus(LocalBMI);
-                var LocalBMR = BMR(LocalWeight, LocalHeight, LocalAge, LocalSex);
-                var LocalDailyIntake = DailyCalories(LocalActivity, LocalBMR);
+            var LocalBMI = BMI(LocalWeight, LocalHeight);
+            var LocalBMIStatus = BMIStatus(LocalBMI);
+            var LocalBMR = BMR(LocalWeight, LocalHeight, LocalAge, LocalSex);
+            var LocalDailyIntake = DailyCalories(LocalActivity, LocalBMR);
+            var LocalDietCalories = DietCalories(LocalBMIStatus, LocalDailyIntake);
 
-                ReturnUserAge(LocalAge);
-                ReturnUserSex(LocalSex);
-                ReturnUserWeight(LocalWeight);
-                ReturnUserHeight(LocalHeight);
-                ReturnUserBMI(LocalBMI);
-                ReturnBMIStatus(LocalBMIStatus);
-                ReturnUserBMR(LocalBMR);
-                ReturnUserDailyIntake(LocalDailyIntake);
-            };
+            ReturnUserAge(LocalAge);
+            ReturnUserSex(LocalSex);
+            ReturnUserWeight(LocalWeight);
+            ReturnUserHeight(LocalHeight);
+            ReturnUserBMI(LocalBMI);
+            ReturnBMIStatus(LocalBMIStatus);
+            ReturnUserBMR(LocalBMR);
+            ReturnUserDailyIntake(LocalDailyIntake);
+            ReturnUserFoodType(LocalFoodType);
+            ReturnUserDietAction(LocalDietAction);
+            ReturnUserDietCalories(LocalDietCalories);
+
+            CalculatebtnEvent(sender, e);
         }
     }
 }
