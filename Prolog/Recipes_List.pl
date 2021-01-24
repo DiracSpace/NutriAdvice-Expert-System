@@ -1,3 +1,7 @@
+:-discontiguous(receta/3).
+:-discontiguous(ingrediente/4).
+:-discontiguous(tipo/3).
+
 % Base
 
 % receta('Crepes salados con huevo frito',150,'https://www.foodspring.es/magazine/recetas-fitness/crepes-salados-con-huevo-frito').
