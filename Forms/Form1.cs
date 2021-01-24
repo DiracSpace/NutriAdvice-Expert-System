@@ -15,6 +15,7 @@ namespace NutriAdvice
     {
         public UserInputModule UserInputModule { get; set; }
         public DisplayUserStatusModule DisplayUserStatusModule { get; set; }
+        public ConsultPrologAndDisplayResultModule ConsultPrologAndDisplayResultModule { get; set; }
 
         public Form1()
         {
@@ -22,6 +23,7 @@ namespace NutriAdvice
 
             UserInputModule = GetData;
             DisplayUserStatusModule = DisplayData;
+            ConsultPrologAndDisplayResultModule = DisplayResults;
 
             UserInputModule.ReturnUserAge += (age) =>
             {
@@ -71,23 +73,35 @@ namespace NutriAdvice
                 return dailyintake;
             };
 
+            // values for Prolog
             UserInputModule.ReturnUserDietCalories += (dietintake) =>
             {
                 DisplayUserStatusModule.UserDietIntake = dietintake;
+                ConsultPrologAndDisplayResultModule.UserDietIntake = dietintake;
                 return dietintake;
             };
 
             UserInputModule.ReturnUserDietAction += (action) =>
             {
                 DisplayUserStatusModule.UserDietAction = action;
+                ConsultPrologAndDisplayResultModule.UserDietAction = action;
                 return action;
             };
 
             UserInputModule.ReturnUserFoodType += (type) =>
             {
                 DisplayUserStatusModule.UserFoodType = type;
+                ConsultPrologAndDisplayResultModule.UserFoodType = type;
                 return type;
             };
+
+            // Call for Prolog consulting
+            UserInputModule.CalculatebtnEvent += new EventHandler(CalculatebtnClicked);
+        }
+
+        protected void CalculatebtnClicked(object sender, EventArgs e)
+        {
+            ConsultPrologAndDisplayResultModule.ConsultProlog();
         }
     }
 }

@@ -170,6 +170,7 @@ namespace NutriAdvice.Modules
             this.Calculatebtn.TabIndex = 6;
             this.Calculatebtn.Text = "Iniciar";
             this.Calculatebtn.UseVisualStyleBackColor = true;
+            this.Calculatebtn.Click += new System.EventHandler(this.Calculatebtn_Click);
             // 
             // Heighttxtbx
             // 

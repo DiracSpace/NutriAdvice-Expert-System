@@ -9,6 +9,7 @@ using System.Windows.Forms;
 namespace NutriAdvice.Modules
 {    public partial class UserInputModule : UserControl
     {
+        public EventHandler CalculatebtnEvent;
         public int? UserAge
         {
             get
@@ -190,35 +191,37 @@ namespace NutriAdvice.Modules
         public UserInputModule()
         {
             InitializeComponent();
+        }
 
-            Calculatebtn.Click += (sender, ev) =>
-            {
-                var LocalAge = UserAge ?? 0;
-                var LocalWeight = UserWeight ?? 0;
-                var LocalHeight = UserHeight ?? 0;
-                var LocalSex = UserSex ?? "";
-                var LocalActivity = UserActiviy ?? "";
-                var LocalFoodType = UserFoodType ?? "";
-                var LocalDietAction = UserDietAction ?? "";
+        private void Calculatebtn_Click(object sender, EventArgs e)
+        {
+            var LocalAge = UserAge ?? 0;
+            var LocalWeight = UserWeight ?? 0;
+            var LocalHeight = UserHeight ?? 0;
+            var LocalSex = UserSex ?? "";
+            var LocalActivity = UserActiviy ?? "";
+            var LocalFoodType = UserFoodType ?? "";
+            var LocalDietAction = UserDietAction ?? "";
 
-                var LocalBMI = BMI(LocalWeight, LocalHeight);
-                var LocalBMIStatus = BMIStatus(LocalBMI);
-                var LocalBMR = BMR(LocalWeight, LocalHeight, LocalAge, LocalSex);
-                var LocalDailyIntake = DailyCalories(LocalActivity, LocalBMR);
-                var LocalDietCalories = DietCalories(LocalBMIStatus, LocalDailyIntake);
+            var LocalBMI = BMI(LocalWeight, LocalHeight);
+            var LocalBMIStatus = BMIStatus(LocalBMI);
+            var LocalBMR = BMR(LocalWeight, LocalHeight, LocalAge, LocalSex);
+            var LocalDailyIntake = DailyCalories(LocalActivity, LocalBMR);
+            var LocalDietCalories = DietCalories(LocalBMIStatus, LocalDailyIntake);
 
-                ReturnUserAge(LocalAge);
-                ReturnUserSex(LocalSex);
-                ReturnUserWeight(LocalWeight);
-                ReturnUserHeight(LocalHeight);
-                ReturnUserBMI(LocalBMI);
-                ReturnBMIStatus(LocalBMIStatus);
-                ReturnUserBMR(LocalBMR);
-                ReturnUserDailyIntake(LocalDailyIntake);
-                ReturnUserFoodType(LocalFoodType);
-                ReturnUserDietAction(LocalDietAction);
-                ReturnUserDietCalories(LocalDietCalories);
-            };
+            ReturnUserAge(LocalAge);
+            ReturnUserSex(LocalSex);
+            ReturnUserWeight(LocalWeight);
+            ReturnUserHeight(LocalHeight);
+            ReturnUserBMI(LocalBMI);
+            ReturnBMIStatus(LocalBMIStatus);
+            ReturnUserBMR(LocalBMR);
+            ReturnUserDailyIntake(LocalDailyIntake);
+            ReturnUserFoodType(LocalFoodType);
+            ReturnUserDietAction(LocalDietAction);
+            ReturnUserDietCalories(LocalDietCalories);
+
+            CalculatebtnEvent(sender, e);
         }
     }
 }

@@ -20,3 +20,4 @@ C:\Users\Roberto de León\Documents\git\NutriAdvice-Expert-System\obj\Debug\net5
 C:\Users\Roberto de León\Documents\git\NutriAdvice-Expert-System\obj\Debug\net5.0-windows\NutriAdvice.genruntimeconfig.cache
 C:\Users\Roberto de León\Documents\git\NutriAdvice-Expert-System\bin\Debug\net5.0-windows\CSProlog.dll
 C:\Users\Roberto de León\Documents\git\NutriAdvice-Expert-System\obj\Debug\net5.0-windows\NutriAdvice.csproj.CopyComplete
+C:\Users\Roberto de León\Documents\git\NutriAdvice-Expert-System\obj\Debug\net5.0-windows\NutriAdvice.Modules.ConsultPrologAndDisplayResultModule.resources

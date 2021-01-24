@@ -31,6 +31,7 @@ namespace NutriAdvice
         {
             this.GetData = new NutriAdvice.Modules.UserInputModule();
             this.DisplayData = new NutriAdvice.Modules.DisplayUserStatusModule();
+            this.DisplayResults = new NutriAdvice.Modules.ConsultPrologAndDisplayResultModule();
             this.SuspendLayout();
             // 
             // GetData
@@ -58,11 +59,19 @@ namespace NutriAdvice
             this.DisplayData.Size = new System.Drawing.Size(304, 259);
             this.DisplayData.TabIndex = 1;
             // 
+            // DisplayResults
+            // 
+            this.DisplayResults.Location = new System.Drawing.Point(12, 210);
+            this.DisplayResults.Name = "DisplayResults";
+            this.DisplayResults.Size = new System.Drawing.Size(358, 150);
+            this.DisplayResults.TabIndex = 2;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(682, 264);
+            this.ClientSize = new System.Drawing.Size(682, 372);
+            this.Controls.Add(this.DisplayResults);
             this.Controls.Add(this.DisplayData);
             this.Controls.Add(this.GetData);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -76,6 +85,7 @@ namespace NutriAdvice
 
         private Modules.UserInputModule GetData;
         private Modules.DisplayUserStatusModule DisplayData;
+        private Modules.ConsultPrologAndDisplayResultModule DisplayResults;
     }
 }
 
