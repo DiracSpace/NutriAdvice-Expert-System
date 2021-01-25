@@ -61,16 +61,19 @@ namespace NutriAdvice
             // 
             // DisplayResults
             // 
-            this.DisplayResults.Location = new System.Drawing.Point(12, 210);
+            this.DisplayResults.Location = new System.Drawing.Point(3, 216);
             this.DisplayResults.Name = "DisplayResults";
-            this.DisplayResults.Size = new System.Drawing.Size(358, 150);
+            this.DisplayResults.Size = new System.Drawing.Size(677, 242);
             this.DisplayResults.TabIndex = 2;
+            this.DisplayResults.UserDietAction = null;
+            this.DisplayResults.UserDietIntake = 0D;
+            this.DisplayResults.UserFoodType = null;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(682, 372);
+            this.ClientSize = new System.Drawing.Size(684, 454);
             this.Controls.Add(this.DisplayResults);
             this.Controls.Add(this.DisplayData);
             this.Controls.Add(this.GetData);

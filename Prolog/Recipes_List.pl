@@ -1,6 +1,6 @@
-:- discontiguous([
-    receta/3, ingrediente/4, tipo/3
-]).
+:-discontiguous(receta/3).
+:-discontiguous(ingrediente/4).
+:-discontiguous(tipo/3).
 
 % Base
 
