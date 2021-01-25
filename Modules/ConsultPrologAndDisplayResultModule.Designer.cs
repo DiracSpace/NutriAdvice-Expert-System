@@ -46,11 +46,13 @@ namespace NutriAdvice.Modules
             this.CS});
             this.dgvDisplayRecipes.EnableHeadersVisualStyles = false;
             this.dgvDisplayRecipes.Location = new System.Drawing.Point(10, 10);
+            this.dgvDisplayRecipes.MultiSelect = false;
             this.dgvDisplayRecipes.Name = "dgvDisplayRecipes";
             this.dgvDisplayRecipes.ReadOnly = true;
             this.dgvDisplayRecipes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvDisplayRecipes.RowHeadersVisible = false;
             this.dgvDisplayRecipes.RowTemplate.Height = 25;
+            this.dgvDisplayRecipes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvDisplayRecipes.ShowCellErrors = false;
             this.dgvDisplayRecipes.Size = new System.Drawing.Size(302, 415);
             this.dgvDisplayRecipes.TabIndex = 0;

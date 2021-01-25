@@ -1,27 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Roberto de León\\Documents\\NutriAdvice-Expert-System\\NutriAdvice.csproj": {}
+    "C:\\Users\\Marco\\Documents\\Proyectos Visual Studio\\NutriAdvice-Expert-System\\NutriAdvice.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Roberto de León\\Documents\\NutriAdvice-Expert-System\\NutriAdvice.csproj": {
+    "C:\\Users\\Marco\\Documents\\Proyectos Visual Studio\\NutriAdvice-Expert-System\\NutriAdvice.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Roberto de León\\Documents\\NutriAdvice-Expert-System\\NutriAdvice.csproj",
+        "projectUniqueName": "C:\\Users\\Marco\\Documents\\Proyectos Visual Studio\\NutriAdvice-Expert-System\\NutriAdvice.csproj",
         "projectName": "NutriAdvice",
-        "projectPath": "C:\\Users\\Roberto de León\\Documents\\NutriAdvice-Expert-System\\NutriAdvice.csproj",
-        "packagesPath": "C:\\Users\\Roberto de León\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Roberto de León\\Documents\\NutriAdvice-Expert-System\\obj\\",
+        "projectPath": "C:\\Users\\Marco\\Documents\\Proyectos Visual Studio\\NutriAdvice-Expert-System\\NutriAdvice.csproj",
+        "packagesPath": "C:\\Users\\Marco\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Marco\\Documents\\Proyectos Visual Studio\\NutriAdvice-Expert-System\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Roberto de León\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Marco\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net5.0-windows"
+          "net5.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -58,20 +55,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-              "version": "[5.0.2, 5.0.2]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Runtime.win-x64",
-              "version": "[5.0.2, 5.0.2]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-              "version": "[5.0.2, 5.0.2]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -80,12 +63,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
-        }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

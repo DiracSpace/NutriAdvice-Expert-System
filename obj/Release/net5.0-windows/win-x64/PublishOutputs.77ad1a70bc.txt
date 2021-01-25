@@ -1,2 +1,0 @@
-C:\Users\Roberto de León\Documents\NutriAdvice-Expert-System\bin\Release\net5.0-windows\win-x64\publish\NutriAdvice.pdb
-C:\Users\Roberto de León\Documents\NutriAdvice-Expert-System\bin\Release\net5.0-windows\win-x64\publish\NutriAdvice.exe
