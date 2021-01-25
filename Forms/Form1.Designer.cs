@@ -54,16 +54,16 @@ namespace NutriAdvice
             // 
             // DisplayData
             // 
-            this.DisplayData.Location = new System.Drawing.Point(376, 3);
+            this.DisplayData.Location = new System.Drawing.Point(3, 190);
             this.DisplayData.Name = "DisplayData";
-            this.DisplayData.Size = new System.Drawing.Size(304, 259);
+            this.DisplayData.Size = new System.Drawing.Size(304, 214);
             this.DisplayData.TabIndex = 1;
             // 
             // DisplayResults
             // 
-            this.DisplayResults.Location = new System.Drawing.Point(3, 216);
+            this.DisplayResults.Location = new System.Drawing.Point(376, 3);
             this.DisplayResults.Name = "DisplayResults";
-            this.DisplayResults.Size = new System.Drawing.Size(228, 242);
+            this.DisplayResults.Size = new System.Drawing.Size(321, 401);
             this.DisplayResults.TabIndex = 2;
             this.DisplayResults.UserDietAction = null;
             this.DisplayResults.UserDietIntake = 0D;
@@ -73,7 +73,7 @@ namespace NutriAdvice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 454);
+            this.ClientSize = new System.Drawing.Size(706, 409);
             this.Controls.Add(this.DisplayResults);
             this.Controls.Add(this.DisplayData);
             this.Controls.Add(this.GetData);

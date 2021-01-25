@@ -4111,19 +4111,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Marco\\.nuget\\packages\\": {}
+    "C:\\Users\\Roberto de León\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Marco\\Documents\\Proyectos Visual Studio\\NutriAdvice-Expert-System\\NutriAdvice.csproj",
+      "projectUniqueName": "C:\\Users\\Roberto de León\\Documents\\git\\NutriAdvice-Expert-System\\NutriAdvice.csproj",
       "projectName": "NutriAdvice",
-      "projectPath": "C:\\Users\\Marco\\Documents\\Proyectos Visual Studio\\NutriAdvice-Expert-System\\NutriAdvice.csproj",
-      "packagesPath": "C:\\Users\\Marco\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Marco\\Documents\\Proyectos Visual Studio\\NutriAdvice-Expert-System\\obj\\",
+      "projectPath": "C:\\Users\\Roberto de León\\Documents\\git\\NutriAdvice-Expert-System\\NutriAdvice.csproj",
+      "packagesPath": "C:\\Users\\Roberto de León\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Roberto de León\\Documents\\git\\NutriAdvice-Expert-System\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Marco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Roberto de León\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4172,7 +4176,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

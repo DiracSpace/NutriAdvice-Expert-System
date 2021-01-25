@@ -37,6 +37,8 @@ namespace NutriAdvice.Modules
             // 
             // dgvDisplayRecipes
             // 
+            this.dgvDisplayRecipes.AllowUserToAddRows = false;
+            this.dgvDisplayRecipes.AllowUserToDeleteRows = false;
             this.dgvDisplayRecipes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dgvDisplayRecipes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDisplayRecipes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -45,22 +47,28 @@ namespace NutriAdvice.Modules
             this.dgvDisplayRecipes.EnableHeadersVisualStyles = false;
             this.dgvDisplayRecipes.Location = new System.Drawing.Point(10, 13);
             this.dgvDisplayRecipes.Name = "dgvDisplayRecipes";
+            this.dgvDisplayRecipes.ReadOnly = true;
+            this.dgvDisplayRecipes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvDisplayRecipes.RowHeadersVisible = false;
             this.dgvDisplayRecipes.RowTemplate.Height = 25;
-            this.dgvDisplayRecipes.Size = new System.Drawing.Size(206, 216);
+            this.dgvDisplayRecipes.ShowCellErrors = false;
+            this.dgvDisplayRecipes.Size = new System.Drawing.Size(302, 373);
             this.dgvDisplayRecipes.TabIndex = 0;
+            this.dgvDisplayRecipes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDisplayRecipes_CellClick);
             // 
             // R
             // 
             this.R.HeaderText = "Receta";
             this.R.Name = "R";
             this.R.ReadOnly = true;
+            this.R.Width = 150;
             // 
             // CS
             // 
             this.CS.HeaderText = "Calorías";
             this.CS.Name = "CS";
             this.CS.ReadOnly = true;
+            this.CS.Width = 150;
             // 
             // ConsultPrologAndDisplayResultModule
             // 
@@ -68,8 +76,7 @@ namespace NutriAdvice.Modules
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dgvDisplayRecipes);
             this.Name = "ConsultPrologAndDisplayResultModule";
-            this.Size = new System.Drawing.Size(226, 244);
-            this.Load += new System.EventHandler(this.ConsultPrologAndDisplayResultModule_Load);
+            this.Size = new System.Drawing.Size(321, 401);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplayRecipes)).EndInit();
             this.ResumeLayout(false);
 

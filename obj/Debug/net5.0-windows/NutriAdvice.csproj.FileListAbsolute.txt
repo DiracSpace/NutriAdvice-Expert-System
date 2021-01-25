@@ -44,3 +44,4 @@ C:\Users\Marco\Documents\Proyectos Visual Studio\NutriAdvice-Expert-System\obj\D
 C:\Users\Marco\Documents\Proyectos Visual Studio\NutriAdvice-Expert-System\obj\Debug\net5.0-windows\ref\NutriAdvice.dll
 C:\Users\Marco\Documents\Proyectos Visual Studio\NutriAdvice-Expert-System\obj\Debug\net5.0-windows\NutriAdvice.pdb
 C:\Users\Marco\Documents\Proyectos Visual Studio\NutriAdvice-Expert-System\obj\Debug\net5.0-windows\NutriAdvice.genruntimeconfig.cache
+C:\Users\Roberto de León\Documents\git\NutriAdvice-Expert-System\obj\Debug\net5.0-windows\NutriAdvice.Forms.Form2.resources

@@ -1,4 +1,5 @@
 ﻿using NutriAdvice.Classes;
+using NutriAdvice.Forms;
 using NutriAdvice.Modules;
 using System;
 using System.Collections.Generic;
@@ -21,8 +22,6 @@ namespace NutriAdvice
         public Form1()
         {
             InitializeComponent();
-
-            List<Recipe> recetas = new List<Recipe>();
 
             UserInputModule = GetData;
             DisplayUserStatusModule = DisplayData;
