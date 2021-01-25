@@ -116,11 +116,11 @@ namespace NutriAdvice
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(193)))), ((int)(((byte)(68)))));
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.label1.Location = new System.Drawing.Point(218, 21);
+            this.label1.Location = new System.Drawing.Point(233, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(314, 55);
+            this.label1.Size = new System.Drawing.Size(282, 55);
             this.label1.TabIndex = 3;
             this.label1.Text = "Nutri Advice";
             // 
