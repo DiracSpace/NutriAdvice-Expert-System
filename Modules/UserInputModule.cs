@@ -100,20 +100,7 @@ namespace NutriAdvice.Modules
             }
         }
 
-        public string UserDietAction
-        {
-            get
-            {
-                try
-                {
-                    return SelectActionCmbbx.Items[SelectActionCmbbx.SelectedIndex].ToString();
-                }
-                catch
-                {
-                    return "";
-                }
-            }
-        }
+        public string UserDietAction;
 
         public Func<int, int> ReturnUserAge { get; set; }
         public Func<string, string> ReturnUserSex { get; set; }
@@ -177,15 +164,24 @@ namespace NutriAdvice.Modules
                 return (bmr * 1.9);
         }
 
-        static double DietCalories(string bmistatus, double dailyintake)
+        double DietCalories(string bmistatus, double dailyintake)
         {
             double overweightdiet = (dailyintake - 500);
             if (bmistatus.Contains("Estás debajo de tu IMC ideal"))
+            {
+                UserDietAction = "Subir";
                 return (dailyintake + 500);
+            }
             else if (bmistatus.Contains("Estás en un IMC ideal"))
+            {
+                UserDietAction = "Mantener";
                 return dailyintake;
+            }
             else
+            {
+                UserDietAction = "Bajar";
                 if (overweightdiet < 1200) return 1300; else return overweightdiet;
+            }
         }
 
         public UserInputModule()
@@ -201,7 +197,6 @@ namespace NutriAdvice.Modules
             var LocalSex = UserSex ?? "";
             var LocalActivity = UserActiviy ?? "";
             var LocalFoodType = UserFoodType ?? "";
-            var LocalDietAction = UserDietAction ?? "";
 
             var LocalBMI = BMI(LocalWeight, LocalHeight);
             var LocalBMIStatus = BMIStatus(LocalBMI);
@@ -218,7 +213,7 @@ namespace NutriAdvice.Modules
             ReturnUserBMR(LocalBMR);
             ReturnUserDailyIntake(LocalDailyIntake);
             ReturnUserFoodType(LocalFoodType);
-            ReturnUserDietAction(LocalDietAction);
+            ReturnUserDietAction(UserDietAction);
             ReturnUserDietCalories(LocalDietCalories);
 
             CalculatebtnEvent(sender, e);
