@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NutriAdvice.Classes;
 using Prolog;
 
 namespace NutriAdvice.Modules
@@ -34,11 +35,13 @@ namespace NutriAdvice.Modules
             get { return userFoodType; }
         }
 
+        public Func<Recipe, string> ReturnRecipe { get; set; }
+
         public void ConsultProlog()
         {
             var prolog = new PrologEngine(persistentCommandHistory: false);
 
-            string filename = @"C:\Users\Roberto de León\Documents\git\NutriAdvice-Expert-System\Prolog\Recipes_List.pl";
+            string filename = @"C:\Users\Marco\Documents\Proyectos Visual Studio\NutriAdvice-Expert-System\Prolog\Recipes_List.pl";
 
             //string query = @"contiene('" + userFoodType.ToString() + "', '"+ userDietAction.ToString() + "', R, CS, L, I, C, M).";
             string query = @"contiene(" + '"' + userFoodType.ToString() + '"' + "," + '"' + userDietAction.ToString() + '"' + ", R, CS, L, I, C, M).";
@@ -55,12 +58,64 @@ namespace NutriAdvice.Modules
                 }
             }
             */
-
+            List<Recipe> RecipeList = new List<Recipe>();
+            Recipe receta = new Recipe();
+            string nombreReceta = "";
             // Get each solution list
             //var index = dgvDisplayRecipes.Rows.Add();
+            Console.WriteLine("Llegue aqui antes de la evaluacion");
+            for (int i = 0; i < solutions.Count; i++)
+            {
+                Console.WriteLine("Entre al for: "+i);
+                if (i == 0)
+                {
+                    nombreReceta = solutions[i][0].Value;
+
+                    receta.setName(solutions[i][0].Value);
+                    receta.setCalories(solutions[i][1].Value);
+                    receta.setLink(solutions[i][2].Value);
+
+                    receta.addIngredient(solutions[i][3].Value, solutions[i][4].Value, solutions[i][5].Value);
+                }
+                else
+                {
+                    if(nombreReceta.Equals(solutions[i][0].Value))
+                    {
+                        receta.addIngredient(solutions[i][3].Value, solutions[i][4].Value, solutions[i][5].Value);
+                    }
+                    else
+                    {
+                        RecipeList.Add(receta);
+                        receta = new Recipe();
+                        nombreReceta = solutions[i][0].Value;
+                        receta.setName(solutions[i][0].Value);
+                        receta.setCalories(solutions[i][1].Value);
+                        receta.setLink(solutions[i][2].Value);
+
+                        receta.addIngredient(solutions[i][3].Value, solutions[i][4].Value, solutions[i][5].Value);
+                    }
+                }
+            }
+
+            for(int i = 0; i < RecipeList.Count; i++)
+            {
+                Console.WriteLine("NombreReceta: "+RecipeList[i].getName());
+                Console.WriteLine("CaloriasReceta: " + RecipeList[i].getCalories());
+                Console.WriteLine("LinkReceta: " + RecipeList[i].getLink());
+                Console.WriteLine("");
+                for (int j = 0; j < RecipeList[i].getIngredientList().Count; j++)
+                {
+                    Console.WriteLine("NombreIngrediente: " + RecipeList[i].getIngredientList()[j].getName());
+                    Console.WriteLine("CantidadIngrediente: " + RecipeList[i].getIngredientList()[j].getQuantity());
+                    Console.WriteLine("MedidaIngrediente: " + RecipeList[i].getIngredientList()[j].getAmount());
+                    Console.WriteLine("");
+                }
+            }
+
+            /*
             foreach (Solution s in solutions.NextSolution)
             {
-                dgvDisplayRecipes.Rows.Add(s[0].Value, s[1].Value, s[2].Value, s[3].Value, s[4].Value, s[5].Value);
+                //dgvDisplayRecipes.Rows.Add(s[0].Value, s[1].Value);
                 /*
                  * 
                  * foreach (Variable v in s.NextVariable)
@@ -71,8 +126,8 @@ namespace NutriAdvice.Modules
                  *          MessageBox.Show("Columna: " + v.Name + ", Celda: " + v.Value);
                  *      }
                  * }
-                */
-            }
+                
+            }*/
         }
 
         public ConsultPrologAndDisplayResultModule()

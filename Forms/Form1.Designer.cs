@@ -63,7 +63,7 @@ namespace NutriAdvice
             // 
             this.DisplayResults.Location = new System.Drawing.Point(3, 216);
             this.DisplayResults.Name = "DisplayResults";
-            this.DisplayResults.Size = new System.Drawing.Size(677, 242);
+            this.DisplayResults.Size = new System.Drawing.Size(228, 242);
             this.DisplayResults.TabIndex = 2;
             this.DisplayResults.UserDietAction = null;
             this.DisplayResults.UserDietIntake = 0D;

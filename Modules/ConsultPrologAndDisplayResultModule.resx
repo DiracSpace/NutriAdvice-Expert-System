@@ -63,16 +63,4 @@
   <metadata name="CS.UserAddedColumn" type="System.Boolean, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
     <value>True</value>
   </metadata>
-  <metadata name="L.UserAddedColumn" type="System.Boolean, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
-    <value>True</value>
-  </metadata>
-  <metadata name="I.UserAddedColumn" type="System.Boolean, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
-    <value>True</value>
-  </metadata>
-  <metadata name="C.UserAddedColumn" type="System.Boolean, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
-    <value>True</value>
-  </metadata>
-  <metadata name="M.UserAddedColumn" type="System.Boolean, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
-    <value>True</value>
-  </metadata>
 </root>
