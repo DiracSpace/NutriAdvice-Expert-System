@@ -1,4 +1,6 @@
-﻿using NutriAdvice.Modules;
+﻿using NutriAdvice.Classes;
+using NutriAdvice.Forms;
+using NutriAdvice.Modules;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

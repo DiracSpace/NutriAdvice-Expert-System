@@ -4,6 +4,9 @@
     <Compile Update="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Modules\ConsultPrologAndDisplayResultModule.cs">
       <SubType>UserControl</SubType>
     </Compile>

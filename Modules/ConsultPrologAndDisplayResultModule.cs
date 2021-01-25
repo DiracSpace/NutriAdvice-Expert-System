@@ -7,12 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NutriAdvice.Classes;
 using Prolog;
+using NutriAdvice.Forms;
+using System.IO;
+using System.Net;
 
 namespace NutriAdvice.Modules
 {
     public partial class ConsultPrologAndDisplayResultModule : UserControl
     {
+        public List<Recipe> RecipeList = new List<Recipe>();
+        public Recipe receta = new Recipe();
+
         private string userDietAction;
         public string UserDietAction
         {
@@ -38,40 +45,66 @@ namespace NutriAdvice.Modules
         {
             var prolog = new PrologEngine(persistentCommandHistory: false);
 
-            string filename = @"C:\Users\Roberto de León\Documents\git\NutriAdvice-Expert-System\Prolog\Recipes_List.pl";
+            string filename = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\NutriAdvice-Expert-System\Prolog\Recipes_List.pl";
 
-            //string query = @"contiene('" + userFoodType.ToString() + "', '"+ userDietAction.ToString() + "', R, CS, L, I, C, M).";
+            if (!File.Exists(filename))
+            {
+                MessageBox.Show("No se encontró archivo, descargando .. ");
+                using (WebClient wc = new WebClient())
+                {
+                    wc.DownloadFileAsync(
+                        new System.Uri("https://raw.githubusercontent.com/DiracSpace/NutriAdvice-Expert-System/main/Prolog/Recipes_List.pl"),
+                        filename
+                    );
+                }
+                MessageBox.Show("Listo, vuelva a dar click");
+            }
+
             string query = @"contiene(" + '"' + userFoodType.ToString() + '"' + "," + '"' + userDietAction.ToString() + '"' + ", R, CS, L, I, C, M).";
 
             var solutions = prolog.GetAllSolutions(filename, query);
 
-            // iterating the properties
-            /*
-            foreach (PrologEngine.ISolution s in prolog.SolutionIterator)
+            string nombreReceta = "";
+            
+            // Get each solution list
+            for (int i = 0; i < solutions.Count; i++)
             {
-                foreach (PrologEngine.IVarValue varValue in s.VarValuesIterator)
+                if (i == 0)
                 {
-                    MessageBox.Show(varValue.ToString());
+                    nombreReceta = solutions[i][0].Value;
+
+                    receta.setName(solutions[i][0].Value);
+                    receta.setCalories(solutions[i][1].Value);
+                    receta.setLink(solutions[i][2].Value);
+
+                    receta.addIngredient(solutions[i][3].Value, solutions[i][4].Value, solutions[i][5].Value);
+                }
+                else
+                {
+                    if(nombreReceta.Equals(solutions[i][0].Value))
+                    {
+                        receta.addIngredient(solutions[i][3].Value, solutions[i][4].Value, solutions[i][5].Value);
+                    }
+                    else
+                    {
+                        RecipeList.Add(receta);
+                        receta = new Recipe();
+                        nombreReceta = solutions[i][0].Value;
+                        receta.setName(solutions[i][0].Value);
+                        receta.setCalories(solutions[i][1].Value);
+                        receta.setLink(solutions[i][2].Value);
+
+                        receta.addIngredient(solutions[i][3].Value, solutions[i][4].Value, solutions[i][5].Value);
+                    }
                 }
             }
-            */
 
-            // Get each solution list
-            //var index = dgvDisplayRecipes.Rows.Add();
-            foreach (Solution s in solutions.NextSolution)
+            for (int i = 0; i < RecipeList.Count; i++)
             {
-                dgvDisplayRecipes.Rows.Add(s[0].Value, s[1].Value, s[2].Value, s[3].Value, s[4].Value, s[5].Value);
-                /*
-                 * 
-                 * foreach (Variable v in s.NextVariable)
-                 * {
-                 *      if (dgvDisplayRecipes.Columns.Contains(v.Name))
-                 *      {
-                 *          dgvDisplayRecipes.Columns.
-                 *          MessageBox.Show("Columna: " + v.Name + ", Celda: " + v.Value);
-                 *      }
-                 * }
-                */
+                if (RecipeList[i].getName() != "" && RecipeList[i].getCalories() != "")
+                {
+                    dgvDisplayRecipes.Rows.Add(RecipeList[i].getName(), RecipeList[i].getCalories());
+                }
             }
         }
 
@@ -80,9 +113,13 @@ namespace NutriAdvice.Modules
             InitializeComponent();
         }
 
-        private void ConsultPrologAndDisplayResultModule_Load(object sender, EventArgs e)
+        private void dgvDisplayRecipes_CellClick(object sender, EventArgs e)
         {
-
+            //MessageBox.Show(dgvDisplayRecipes.CurrentCell.RowIndex.ToString());
+            
+            Form2 showData = new Form2(RecipeList, dgvDisplayRecipes.CurrentCell.RowIndex);
+            showData.GetRecipeIngredientData();
+            showData.Show();
         }
     }
 }
