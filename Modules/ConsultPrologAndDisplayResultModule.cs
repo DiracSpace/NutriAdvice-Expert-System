@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using NutriAdvice.Classes;
 using Prolog;
 using NutriAdvice.Forms;
+using System.IO;
 
 namespace NutriAdvice.Modules
 {
@@ -43,10 +44,8 @@ namespace NutriAdvice.Modules
         {
             var prolog = new PrologEngine(persistentCommandHistory: false);
 
-            //string filename = @"C:\Users\Marco\Documents\Proyectos Visual Studio\NutriAdvice-Expert-System\Prolog\Recipes_List.pl";
-            string filename = @"C:\Users\Roberto de León\Documents\git\NutriAdvice-Expert-System\Prolog\Recipes_List.pl";
+            string filename = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\NutriAdvice-Expert-System\Prolog\Recipes_List.pl";
 
-            //string query = @"contiene('" + userFoodType.ToString() + "', '"+ userDietAction.ToString() + "', R, CS, L, I, C, M).";
             string query = @"contiene(" + '"' + userFoodType.ToString() + '"' + "," + '"' + userDietAction.ToString() + '"' + ", R, CS, L, I, C, M).";
 
             var solutions = prolog.GetAllSolutions(filename, query);

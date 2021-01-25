@@ -78,6 +78,8 @@ namespace NutriAdvice
             this.Controls.Add(this.DisplayData);
             this.Controls.Add(this.GetData);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
