@@ -85,7 +85,7 @@ namespace NutriAdvice.Modules
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(9, 9);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(289, 243);
+            this.groupBox1.Size = new System.Drawing.Size(289, 197);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información de Usuario:";
@@ -310,7 +310,7 @@ namespace NutriAdvice.Modules
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
             this.Name = "DisplayUserStatusModule";
-            this.Size = new System.Drawing.Size(312, 264);
+            this.Size = new System.Drawing.Size(307, 212);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

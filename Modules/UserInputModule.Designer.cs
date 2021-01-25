@@ -67,7 +67,7 @@ namespace NutriAdvice.Modules
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(9, 10);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(352, 190);
+            this.groupBox1.Size = new System.Drawing.Size(352, 171);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos:";
@@ -164,7 +164,7 @@ namespace NutriAdvice.Modules
             // 
             // Calculatebtn
             // 
-            this.Calculatebtn.Location = new System.Drawing.Point(266, 161);
+            this.Calculatebtn.Location = new System.Drawing.Point(266, 140);
             this.Calculatebtn.Name = "Calculatebtn";
             this.Calculatebtn.Size = new System.Drawing.Size(75, 23);
             this.Calculatebtn.TabIndex = 6;
@@ -226,7 +226,7 @@ namespace NutriAdvice.Modules
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
             this.Name = "UserInputModule";
-            this.Size = new System.Drawing.Size(370, 209);
+            this.Size = new System.Drawing.Size(370, 189);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
