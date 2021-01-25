@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Roberto de León\\Documents\\git\\NutriAdvice-Expert-System\\NutriAdvice.csproj": {}
+    "C:\\Users\\Roberto de León\\Documents\\NutriAdvice-Expert-System\\NutriAdvice.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Roberto de León\\Documents\\git\\NutriAdvice-Expert-System\\NutriAdvice.csproj": {
+    "C:\\Users\\Roberto de León\\Documents\\NutriAdvice-Expert-System\\NutriAdvice.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Roberto de León\\Documents\\git\\NutriAdvice-Expert-System\\NutriAdvice.csproj",
+        "projectUniqueName": "C:\\Users\\Roberto de León\\Documents\\NutriAdvice-Expert-System\\NutriAdvice.csproj",
         "projectName": "NutriAdvice",
-        "projectPath": "C:\\Users\\Roberto de León\\Documents\\git\\NutriAdvice-Expert-System\\NutriAdvice.csproj",
+        "projectPath": "C:\\Users\\Roberto de León\\Documents\\NutriAdvice-Expert-System\\NutriAdvice.csproj",
         "packagesPath": "C:\\Users\\Roberto de León\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Roberto de León\\Documents\\git\\NutriAdvice-Expert-System\\obj\\",
+        "outputPath": "C:\\Users\\Roberto de León\\Documents\\NutriAdvice-Expert-System\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

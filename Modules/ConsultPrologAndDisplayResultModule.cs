@@ -11,6 +11,7 @@ using NutriAdvice.Classes;
 using Prolog;
 using NutriAdvice.Forms;
 using System.IO;
+using System.Net;
 
 namespace NutriAdvice.Modules
 {
@@ -45,6 +46,19 @@ namespace NutriAdvice.Modules
             var prolog = new PrologEngine(persistentCommandHistory: false);
 
             string filename = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\NutriAdvice-Expert-System\Prolog\Recipes_List.pl";
+
+            if (!File.Exists(filename))
+            {
+                MessageBox.Show("No se encontró archivo, descargando .. ");
+                using (WebClient wc = new WebClient())
+                {
+                    wc.DownloadFileAsync(
+                        new System.Uri("https://raw.githubusercontent.com/DiracSpace/NutriAdvice-Expert-System/main/Prolog/Recipes_List.pl"),
+                        filename
+                    );
+                }
+                MessageBox.Show("Listo, vuelva a dar click");
+            }
 
             string query = @"contiene(" + '"' + userFoodType.ToString() + '"' + "," + '"' + userDietAction.ToString() + '"' + ", R, CS, L, I, C, M).";
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VaOPRsIz6Vbcfl3/AHWC6LyDFJB67CEFCdmBFEVh8Md3QqNSjaKlzRixjMDktULZ51VzvdYiRsRf58HKJ30mhQ==",
+  "dgSpecHash": "rHGMs+niLNoqlh9onrwSo4SY3hcylpFGl6AbjveniqFVPvJXGsGqB/vII20QnubPG9omfMWgMvV3ymgkvKKIAw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Roberto de León\\Documents\\git\\NutriAdvice-Expert-System\\NutriAdvice.csproj",
+  "projectFilePath": "C:\\Users\\Roberto de León\\Documents\\NutriAdvice-Expert-System\\NutriAdvice.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Roberto de León\\.nuget\\packages\\csprolog\\6.0.0\\csprolog.6.0.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.0.1\\microsoft.netcore.platforms.1.0.1.nupkg.sha512",
