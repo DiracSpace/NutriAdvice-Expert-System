@@ -30,18 +30,15 @@ namespace NutriAdvice.Forms
 
         public void GetRecipeIngredientData()
         {
-            for (int i = 0; i < LocalRecipeList.Count; i++)
+            DisplayRecipeLink.Text = LocalRecipeList[location].getName().ToString();
+            for (int j = 0; j < LocalRecipeList[location].getIngredientList().Count; j++)
             {
-                DisplayRecipeLink.Text = LocalRecipeList[location].getName().ToString();
-                for (int j = 0; j < LocalRecipeList[location].getIngredientList().Count; j++)
-                {
-                    dgvDisplayRecipeIngredients.Rows.Add(
-                        LocalRecipeList[location].getIngredientList()[j].getName(),
-                        LocalRecipeList[location].getIngredientList()[j].getAmount(),
-                        LocalRecipeList[location].getIngredientList()[j].getQuantity()
-                        );
-                    RecipeWebsiteLink = LocalRecipeList[location].getLink();
-                }
+                dgvDisplayRecipeIngredients.Rows.Add(
+                    LocalRecipeList[location].getIngredientList()[j].getName(),
+                    LocalRecipeList[location].getIngredientList()[j].getAmount(),
+                    LocalRecipeList[location].getIngredientList()[j].getQuantity()
+                    );
+                RecipeWebsiteLink = LocalRecipeList[location].getLink();
             }
         }
 
