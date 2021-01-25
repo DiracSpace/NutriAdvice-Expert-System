@@ -29,6 +29,7 @@ namespace NutriAdvice.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.DisplayRecipeLink = new System.Windows.Forms.LinkLabel();
             this.dgvDisplayRecipeIngredients = new System.Windows.Forms.DataGridView();
             this.dgvIngredient = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,10 +40,13 @@ namespace NutriAdvice.Forms
             // 
             // DisplayRecipeLink
             // 
+            this.DisplayRecipeLink.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(157)))), ((int)(((byte)(46)))));
             this.DisplayRecipeLink.AutoSize = true;
+            this.DisplayRecipeLink.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DisplayRecipeLink.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(193)))), ((int)(((byte)(68)))));
             this.DisplayRecipeLink.Location = new System.Drawing.Point(12, 9);
             this.DisplayRecipeLink.Name = "DisplayRecipeLink";
-            this.DisplayRecipeLink.Size = new System.Drawing.Size(60, 15);
+            this.DisplayRecipeLink.Size = new System.Drawing.Size(66, 14);
             this.DisplayRecipeLink.TabIndex = 3;
             this.DisplayRecipeLink.TabStop = true;
             this.DisplayRecipeLink.Text = "linkLabel1";
@@ -50,15 +54,19 @@ namespace NutriAdvice.Forms
             // 
             // dgvDisplayRecipeIngredients
             // 
+            this.dgvDisplayRecipeIngredients.AllowUserToAddRows = false;
+            this.dgvDisplayRecipeIngredients.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDisplayRecipeIngredients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDisplayRecipeIngredients.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvIngredient,
             this.dgvCalories,
             this.dgvQuantity});
-            this.dgvDisplayRecipeIngredients.Location = new System.Drawing.Point(12, 41);
+            this.dgvDisplayRecipeIngredients.Location = new System.Drawing.Point(11, 41);
             this.dgvDisplayRecipeIngredients.Name = "dgvDisplayRecipeIngredients";
+            this.dgvDisplayRecipeIngredients.ReadOnly = true;
+            this.dgvDisplayRecipeIngredients.RowHeadersVisible = false;
             this.dgvDisplayRecipeIngredients.RowTemplate.Height = 25;
-            this.dgvDisplayRecipeIngredients.Size = new System.Drawing.Size(408, 198);
+            this.dgvDisplayRecipeIngredients.Size = new System.Drawing.Size(461, 208);
             this.dgvDisplayRecipeIngredients.TabIndex = 5;
             // 
             // dgvIngredient
@@ -83,14 +91,16 @@ namespace NutriAdvice.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(432, 251);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.ClientSize = new System.Drawing.Size(484, 261);
             this.Controls.Add(this.dgvDisplayRecipeIngredients);
             this.Controls.Add(this.DisplayRecipeLink);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "Ingredientes";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplayRecipeIngredients)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

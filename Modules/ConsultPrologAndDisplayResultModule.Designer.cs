@@ -45,14 +45,14 @@ namespace NutriAdvice.Modules
             this.R,
             this.CS});
             this.dgvDisplayRecipes.EnableHeadersVisualStyles = false;
-            this.dgvDisplayRecipes.Location = new System.Drawing.Point(10, 13);
+            this.dgvDisplayRecipes.Location = new System.Drawing.Point(10, 10);
             this.dgvDisplayRecipes.Name = "dgvDisplayRecipes";
             this.dgvDisplayRecipes.ReadOnly = true;
             this.dgvDisplayRecipes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvDisplayRecipes.RowHeadersVisible = false;
             this.dgvDisplayRecipes.RowTemplate.Height = 25;
             this.dgvDisplayRecipes.ShowCellErrors = false;
-            this.dgvDisplayRecipes.Size = new System.Drawing.Size(302, 373);
+            this.dgvDisplayRecipes.Size = new System.Drawing.Size(302, 415);
             this.dgvDisplayRecipes.TabIndex = 0;
             this.dgvDisplayRecipes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDisplayRecipes_CellClick);
             // 
@@ -76,7 +76,7 @@ namespace NutriAdvice.Modules
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dgvDisplayRecipes);
             this.Name = "ConsultPrologAndDisplayResultModule";
-            this.Size = new System.Drawing.Size(321, 401);
+            this.Size = new System.Drawing.Size(325, 425);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplayRecipes)).EndInit();
             this.ResumeLayout(false);
 
