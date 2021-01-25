@@ -49,6 +49,9 @@ namespace NutriAdvice.Modules
 
             if (!File.Exists(filename))
             {
+                string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\NutriAdvice-Expert-System\Prolog\";
+                System.IO.FileInfo file = new System.IO.FileInfo(path);
+                file.Directory.Create();
                 MessageBox.Show("No se encontró archivo, descargando .. ");
                 using (WebClient wc = new WebClient())
                 {
