@@ -17,8 +17,8 @@ namespace NutriAdvice.Modules
 {
     public partial class ConsultPrologAndDisplayResultModule : UserControl
     {
-        public List<Recipe> RecipeList = new List<Recipe>();
-        public Recipe receta = new Recipe();
+        public List<Recipe> RecipeList = new();
+        public Recipe receta = new();
 
         private string userDietAction;
         public string UserDietAction
@@ -54,13 +54,13 @@ namespace NutriAdvice.Modules
             if (!File.Exists(filename))
             {
                 string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\NutriAdvice-Expert-System\Prolog\";
-                System.IO.FileInfo file = new System.IO.FileInfo(path);
+                FileInfo file = new(path);
                 file.Directory.Create();
                 MessageBox.Show("No se encontró archivo, descargando .. ");
-                using (WebClient wc = new WebClient())
+                using (WebClient wc = new())
                 {
                     wc.DownloadFileAsync(
-                        new System.Uri("https://raw.githubusercontent.com/DiracSpace/NutriAdvice-Expert-System/main/Prolog/Recipes_List.pl"),
+                        new Uri("https://raw.githubusercontent.com/DiracSpace/NutriAdvice-Expert-System/main/Prolog/Recipes_List.pl"),
                         filename
                     );
                 }
@@ -80,37 +80,37 @@ namespace NutriAdvice.Modules
                 {
                     nombreReceta = solutions[i][0].Value;
 
-                    receta.setName(solutions[i][0].Value);
-                    receta.setCalories(solutions[i][1].Value);
-                    receta.setLink(solutions[i][2].Value);
+                    receta.SetName(solutions[i][0].Value);
+                    receta.SetCalories(solutions[i][1].Value);
+                    receta.SetLink(solutions[i][2].Value);
 
-                    receta.addIngredient(solutions[i][3].Value, solutions[i][4].Value, solutions[i][5].Value);
+                    receta.AddIngredient(solutions[i][3].Value, solutions[i][4].Value, solutions[i][5].Value);
                 }
                 else
                 {
                     if(nombreReceta.Equals(solutions[i][0].Value))
                     {
-                        receta.addIngredient(solutions[i][3].Value, solutions[i][4].Value, solutions[i][5].Value);
+                        receta.AddIngredient(solutions[i][3].Value, solutions[i][4].Value, solutions[i][5].Value);
                     }
                     else
                     {
                         RecipeList.Add(receta);
                         receta = new Recipe();
                         nombreReceta = solutions[i][0].Value;
-                        receta.setName(solutions[i][0].Value);
-                        receta.setCalories(solutions[i][1].Value);
-                        receta.setLink(solutions[i][2].Value);
+                        receta.SetName(solutions[i][0].Value);
+                        receta.SetCalories(solutions[i][1].Value);
+                        receta.SetLink(solutions[i][2].Value);
 
-                        receta.addIngredient(solutions[i][3].Value, solutions[i][4].Value, solutions[i][5].Value);
+                        receta.AddIngredient(solutions[i][3].Value, solutions[i][4].Value, solutions[i][5].Value);
                     }
                 }
             }
 
             for (int i = 0; i < RecipeList.Count; i++)
             {
-                if (RecipeList[i].getName() != "" && RecipeList[i].getCalories() != "")
+                if (RecipeList[i].GetName() != "" && RecipeList[i].GetCalories() != "")
                 {
-                    dgvDisplayRecipes.Rows.Add(RecipeList[i].getName(), RecipeList[i].getCalories());
+                    dgvDisplayRecipes.Rows.Add(RecipeList[i].GetName(), RecipeList[i].GetCalories());
                 }
             }
         }
@@ -120,11 +120,9 @@ namespace NutriAdvice.Modules
             InitializeComponent();
         }
 
-        private void dgvDisplayRecipes_CellClick(object sender, EventArgs e)
-        {
-            //MessageBox.Show(dgvDisplayRecipes.CurrentCell.RowIndex.ToString());
-            
-            Form2 showData = new Form2(RecipeList, dgvDisplayRecipes.CurrentCell.RowIndex);
+        private void DgvDisplayRecipes_CellClick(object sender, EventArgs e)
+        {            
+            Form2 showData = new(RecipeList, dgvDisplayRecipes.CurrentCell.RowIndex);
             showData.GetRecipeIngredientData();
             showData.Show();
         }

@@ -56,7 +56,7 @@ namespace NutriAdvice.Modules
             this.dgvDisplayRecipes.ShowCellErrors = false;
             this.dgvDisplayRecipes.Size = new System.Drawing.Size(302, 415);
             this.dgvDisplayRecipes.TabIndex = 0;
-            this.dgvDisplayRecipes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDisplayRecipes_CellClick);
+            this.dgvDisplayRecipes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvDisplayRecipes_CellClick);
             // 
             // R
             // 

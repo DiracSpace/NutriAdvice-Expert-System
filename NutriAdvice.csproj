@@ -8,7 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Evidence\" />
+    <Compile Remove="Evidence\**" />
+    <EmbeddedResource Remove="Evidence\**" />
+    <None Remove="Evidence\**" />
   </ItemGroup>
 
   <ItemGroup>
