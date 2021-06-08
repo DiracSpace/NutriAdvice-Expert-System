@@ -43,6 +43,10 @@ namespace NutriAdvice.Modules
 
         public void ConsultProlog()
         {
+            dgvDisplayRecipes.Rows.Clear();
+            RecipeList.Clear();
+            receta = new Recipe();
+
             var prolog = new PrologEngine(persistentCommandHistory: false);
 
             string filename = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\NutriAdvice-Expert-System\Prolog\Recipes_List.pl";

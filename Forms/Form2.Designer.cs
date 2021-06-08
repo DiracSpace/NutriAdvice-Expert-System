@@ -33,8 +33,8 @@ namespace NutriAdvice.Forms
             this.DisplayRecipeLink = new System.Windows.Forms.LinkLabel();
             this.dgvDisplayRecipeIngredients = new System.Windows.Forms.DataGridView();
             this.dgvIngredient = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvCalories = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvCalories = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplayRecipeIngredients)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,8 +59,8 @@ namespace NutriAdvice.Forms
             this.dgvDisplayRecipeIngredients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDisplayRecipeIngredients.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvIngredient,
-            this.dgvCalories,
-            this.dgvQuantity});
+            this.dgvQuantity,
+            this.dgvCalories});
             this.dgvDisplayRecipeIngredients.Location = new System.Drawing.Point(11, 41);
             this.dgvDisplayRecipeIngredients.Name = "dgvDisplayRecipeIngredients";
             this.dgvDisplayRecipeIngredients.ReadOnly = true;
@@ -75,17 +75,17 @@ namespace NutriAdvice.Forms
             this.dgvIngredient.Name = "dgvIngredient";
             this.dgvIngredient.ReadOnly = true;
             // 
-            // dgvCalories
-            // 
-            this.dgvCalories.HeaderText = "Calorías";
-            this.dgvCalories.Name = "dgvCalories";
-            this.dgvCalories.ReadOnly = true;
-            // 
             // dgvQuantity
             // 
             this.dgvQuantity.HeaderText = "Medida";
             this.dgvQuantity.Name = "dgvQuantity";
             this.dgvQuantity.ReadOnly = true;
+            // 
+            // dgvCalories
+            // 
+            this.dgvCalories.HeaderText = "Cantidad";
+            this.dgvCalories.Name = "dgvCalories";
+            this.dgvCalories.ReadOnly = true;
             // 
             // Form2
             // 
@@ -111,7 +111,7 @@ namespace NutriAdvice.Forms
         private System.Windows.Forms.LinkLabel DisplayRecipeLink;
         private System.Windows.Forms.DataGridView dgvDisplayRecipeIngredients;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvIngredient;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvCalories;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvCalories;
     }
 }
