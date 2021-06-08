@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NutriAdvice.Classes
+﻿namespace NutriAdvice.Classes
 {
     public class Ingredient
     {
@@ -26,32 +20,32 @@ namespace NutriAdvice.Classes
             this.amount = amount;
         }
 
-        public string getName()
+        public string GetName()
         {
             return name;
         }
 
-        public void setName(string name)
+        public void SetName(string name)
         {
             this.name = name;
         }
 
-        public string getQuantity()
+        public string GetQuantity()
         {
             return quantity;
         }
 
-        public void setQuantity(string quantity)
+        public void SetQuantity(string quantity)
         {
             this.quantity = quantity;
         }
 
-        public string getAmount()
+        public string GetAmount()
         {
             return amount;
         }
 
-        public void setAmount(string amount)
+        public void SetAmount(string amount)
         {
             this.amount = amount;
         }

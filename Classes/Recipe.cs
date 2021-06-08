@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace NutriAdvice.Classes
 {
@@ -11,7 +7,7 @@ namespace NutriAdvice.Classes
         private string name;
         private string link;
         private string calories;
-        private List<Ingredient> ingredientsList = new List<Ingredient>();
+        private readonly List<Ingredient> ingredientsList = new();
 
         public Recipe()
         {
@@ -29,52 +25,52 @@ namespace NutriAdvice.Classes
             ingredientsList.Clear();
         }
 
-        public string getName()
+        public string GetName()
         {
             return name;
         }
 
-        public void setName(string name)
+        public void SetName(string name)
         {
             this.name = name;
         }
 
-        public string getLink()
+        public string GetLink()
         {
             return link;
         }
 
-        public void setLink(string link)
+        public void SetLink(string link)
         {
             this.link = link;
         }
 
-        public string getCalories()
+        public string GetCalories()
         {
             return calories;
         }
 
-        public void setCalories(string calories)
+        public void SetCalories(string calories)
         {
             this.calories = calories;
         }
 
-        public Ingredient getIngredient(int indice)
+        public Ingredient GetIngredient(int indice)
         {
             return ingredientsList[indice];
         }
 
-        public void addIngredient(string name, string quantity, string amount)
+        public void AddIngredient(string name, string quantity, string amount)
         {
             ingredientsList.Add(new Ingredient(name,quantity,amount));
         }
 
-        public List<Ingredient> getIngredientList()
+        public List<Ingredient> GetIngredientList()
         {
             return ingredientsList;
         }
 
-        public void cleanIngredientList()
+        public void CleanIngredientList()
         {
             ingredientsList.Clear();
         }
